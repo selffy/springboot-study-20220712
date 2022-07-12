@@ -1,5 +1,7 @@
 package com.springboot.study_selffy;
 
+//프로젝트를 실행시켜줄 메인
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
