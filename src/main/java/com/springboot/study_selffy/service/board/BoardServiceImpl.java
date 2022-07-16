@@ -2,28 +2,30 @@ package com.springboot.study_selffy.service.board;
 
 import org.springframework.stereotype.Service;
 
+import com.springboot.study_selffy.domain.board.BoardRepository;
 import com.springboot.study_selffy.web.dto.board.CreateBoardReqDto;
 
+import lombok.RequiredArgsConstructor;
+
 @Service
+@RequiredArgsConstructor
 public class BoardServiceImpl implements BoardService {
 
+	private final BoardRepository boardRepository;
+	
 	@Override
-	public Boolean createBoard(CreateBoardReqDto createBoardReqDto) throws Exception {
-		System.out.println(createBoardReqDto);
-		if(0 == 0) {
-		throw new RuntimeException();
-		}
-		return true;
+	public boolean createBoard(CreateBoardReqDto createBoardReqDto) throws Exception {
+		return boardRepository.save(createBoardReqDto.toEntity()) > 0;
 	}
 
 	@Override
-	public Boolean updateBoard(int boardcode, CreateBoardReqDto createBoardReqDto) throws Exception {
-		return null;
+	public boolean updateBoard(int boardcode, CreateBoardReqDto createBoardReqDto) throws Exception {
+		return false;
 	}
 
 	@Override
-	public Boolean deleteBoard(int boardcode) throws Exception {
-		return null;
+	public boolean deleteBoard(int boardcode) throws Exception {
+		return false;
 	}
 
 	
